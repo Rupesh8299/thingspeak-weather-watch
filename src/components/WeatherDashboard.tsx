@@ -150,42 +150,48 @@ const WeatherDashboard: React.FC = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {isMobile ? (
-              <>
-                <DataChart
-                  title="Temperature History"
-                  data={historicalData}
-                  dataKey="field1"
-                  color="#e05c41"
-                  yAxisLabel="Temperature (°C)"
-                />
-                <DataChart
-                  title="Air Quality History"
-                  data={historicalData}
-                  dataKey="field4"
-                  color="#4981ce"
-                  yAxisLabel="Air Quality"
-                />
-              </>
-            ) : (
-              <>
-                <DataChart
-                  title="Temperature History"
-                  data={historicalData}
-                  dataKey="field1"
-                  color="#e05c41"
-                  yAxisLabel="Temperature (°C)"
-                />
-                <DataChart
-                  title="Air Quality History"
-                  data={historicalData}
-                  dataKey="field4"
-                  color="#4981ce"
-                  yAxisLabel="Air Quality"
-                />
-              </>
-            )}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <DataChart
+              title="Temperature History"
+              data={historicalData}
+              dataKey="field1"
+              color="#e05c41"
+              yAxisLabel="Temperature (°C)"
+            />
+            <DataChart
+              title="Humidity History"
+              data={historicalData}
+              dataKey="field2"
+              color="#3b82f6"
+              yAxisLabel="Humidity (%)"
+            />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <DataChart
+              title="Pressure History"
+              data={historicalData}
+              dataKey="field3"
+              color="#9333ea"
+              yAxisLabel="Pressure (hPa)"
+            />
+            <DataChart
+              title="Air Quality History"
+              data={historicalData}
+              dataKey="field4"
+              color="#4981ce"
+              yAxisLabel="Air Quality"
+            />
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
+            <DataChart
+              title="Light Intensity History"
+              data={historicalData}
+              dataKey="field5"
+              color="#eab308"
+              yAxisLabel="Light (lux)"
+            />
           </div>
         </>
       )}

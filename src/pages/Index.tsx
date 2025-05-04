@@ -10,10 +10,10 @@ const Index = () => {
           <h1 className="text-2xl font-bold text-center">ThingSpeak Weather Monitoring</h1>
         </div>
       </header>
-      <main>
+      <main className="pb-8">
         <WeatherDashboard />
       </main>
-      <footer className="mt-8 py-4 border-t border-slate-200 dark:border-slate-700">
+      <footer className="py-4 border-t border-slate-200 dark:border-slate-700">
         <div className="container mx-auto text-center text-sm text-slate-500">
           <p>Powered by ThingSpeak API • Channel ID: 2946903</p>
         </div>
