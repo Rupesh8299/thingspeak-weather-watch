@@ -1,6 +1,7 @@
 
 import React from "react";
 import WeatherDashboard from "@/components/WeatherDashboard";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -15,7 +16,13 @@ const Index = () => {
       </main>
       <footer className="py-4 border-t border-slate-200 dark:border-slate-700">
         <div className="container mx-auto text-center text-sm text-slate-500">
-          <p>Powered by ThingSpeak API • Channel ID: 2946903</p>
+          <p className="mb-2">Powered by ThingSpeak API • Channel ID: 2946903</p>
+          <p className="mb-3">Project Team: Rupesh Singh, Abhishek Singh, Aman Sharma</p>
+          <p className="mb-2">© {new Date().getFullYear()} Weather Monitoring System. All Rights Reserved.</p>
+          <div className="flex justify-center gap-4 mt-2">
+            <Link to="/terms" className="text-blue-500 hover:text-blue-700">Terms of Use</Link>
+            <Link to="/copyright" className="text-blue-500 hover:text-blue-700">Copyright</Link>
+          </div>
         </div>
       </footer>
     </div>
