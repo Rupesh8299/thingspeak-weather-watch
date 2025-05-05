@@ -47,24 +47,6 @@ const MeasurementCard: React.FC<MeasurementCardProps> = ({
     }
   };
 
-  // Get the appropriate gradient based on the measurement type
-  const getProgressGradient = () => {
-    switch (icon) {
-      case "temperature":
-        return "bg-gradient-to-r from-orange-300 via-red-500 to-red-600";
-      case "humidity":
-        return "bg-gradient-to-r from-cyan-300 via-blue-400 to-blue-600";
-      case "pressure":
-        return "bg-gradient-to-r from-indigo-300 via-purple-500 to-purple-700";
-      case "air-quality":
-        return "bg-gradient-to-r from-green-300 via-green-500 to-green-700";
-      case "light":
-        return "bg-gradient-to-r from-amber-300 via-yellow-500 to-yellow-600";
-      default:
-        return progressColor || "bg-gradient-to-r from-blue-400 to-blue-600";
-    }
-  };
-
   return (
     <Card className={cn("overflow-hidden transition-all duration-200 hover:shadow-lg", className)}>
       <CardHeader className={cn("flex flex-row items-center justify-between space-y-0 pb-2", color)}>
@@ -81,16 +63,8 @@ const MeasurementCard: React.FC<MeasurementCardProps> = ({
           <div className="mt-2">
             <Progress 
               value={progressValue} 
-              className="bg-white dark:bg-gray-700 shadow-inner"
-            >
-              <div 
-                className={cn("h-full w-full", getProgressGradient())}
-                style={{ 
-                  transform: `translateX(-${100 - progressValue}%)`,
-                  transition: "transform 0.4s ease-in-out"
-                }}
-              />
-            </Progress>
+              className={cn("h-2", progressColor || "")}
+            />
           </div>
         )}
       </CardContent>
