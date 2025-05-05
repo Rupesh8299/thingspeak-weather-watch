@@ -127,19 +127,19 @@ const WeatherDashboard: React.FC = () => {
               progressColor="bg-gradient-to-r from-blue-400 to-blue-600"
             />
             <MeasurementCard
-              title="Pressure"
-              value={formatPressure(latestFeed?.field3)}
-              icon="pressure"
-              progressValue={getPressureProgress(latestFeed?.field3)}
-              progressColor="bg-gradient-to-r from-purple-400 to-purple-600"
-            />
-            <MeasurementCard
               title="Air Quality"
               value={formatAirQuality(latestFeed?.field4)}
               icon="air-quality"
               color={getAirQualityTextColor(latestFeed?.field4)}
               progressValue={getAirQualityProgress(latestFeed?.field4)}
               progressColor={getAirQualityColor(latestFeed?.field4)}
+            />
+            <MeasurementCard
+              title="Pressure"
+              value={formatPressure(latestFeed?.field3)}
+              icon="pressure"
+              progressValue={getPressureProgress(latestFeed?.field3)}
+              progressColor="bg-gradient-to-r from-purple-400 to-purple-600"
             />
             <MeasurementCard
               title="Light Intensity"
@@ -169,18 +169,18 @@ const WeatherDashboard: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <DataChart
-              title="Pressure History"
-              data={historicalData}
-              dataKey="field3"
-              color="#9333ea"
-              yAxisLabel="Pressure (hPa)"
-            />
-            <DataChart
               title="Air Quality History"
               data={historicalData}
               dataKey="field4"
               color="#4981ce"
               yAxisLabel="Air Quality"
+            />
+            <DataChart
+              title="Pressure History"
+              data={historicalData}
+              dataKey="field3"
+              color="#9333ea"
+              yAxisLabel="Pressure (hPa)"
             />
           </div>
           
