@@ -63,8 +63,16 @@ const MeasurementCard: React.FC<MeasurementCardProps> = ({
           <div className="mt-2">
             <Progress 
               value={progressValue} 
-              className={cn("h-2", progressColor || "")}
-            />
+              className="bg-white dark:bg-gray-700 shadow-inner"
+            >
+              <div 
+                className={cn("h-full w-full", progressColor || "bg-blue-500")}
+                style={{ 
+                  transform: `translateX(-${100 - progressValue}%)`,
+                  transition: "transform 0.4s ease-in-out"
+                }}
+              />
+            </Progress>
           </div>
         )}
       </CardContent>
