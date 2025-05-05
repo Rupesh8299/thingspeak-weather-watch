@@ -114,16 +114,16 @@ const WeatherDashboard: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
             <MeasurementCard
               title="Temperature"
-              value={formatTemperature(latestFeed?.field1)}
+              value={formatTemperature(latestFeed?.field2)}
               icon="temperature"
-              progressValue={getTemperatureProgress(latestFeed?.field1)}
+              progressValue={getTemperatureProgress(latestFeed?.field2)}
               progressColor="bg-gradient-to-r from-blue-300 to-red-500"
             />
             <MeasurementCard
               title="Humidity"
-              value={formatHumidity(latestFeed?.field2)}
+              value={formatHumidity(latestFeed?.field1)}
               icon="humidity"
-              progressValue={getHumidityProgress(latestFeed?.field2)}
+              progressValue={getHumidityProgress(latestFeed?.field1)}
               progressColor="bg-gradient-to-r from-blue-400 to-blue-600"
             />
             <MeasurementCard
@@ -136,16 +136,16 @@ const WeatherDashboard: React.FC = () => {
             />
             <MeasurementCard
               title="Pressure"
-              value={formatPressure(latestFeed?.field3)}
+              value={formatPressure(latestFeed?.field5)}
               icon="pressure"
-              progressValue={getPressureProgress(latestFeed?.field3)}
+              progressValue={getPressureProgress(latestFeed?.field5)}
               progressColor="bg-gradient-to-r from-purple-400 to-purple-600"
             />
             <MeasurementCard
               title="Light Intensity"
-              value={formatLightIntensity(latestFeed?.field5)}
+              value={formatLightIntensity(latestFeed?.field3)}
               icon="light"
-              progressValue={getLightProgress(latestFeed?.field5)}
+              progressValue={getLightProgress(latestFeed?.field3)}
               progressColor="bg-gradient-to-r from-yellow-300 to-yellow-500"
             />
           </div>
@@ -154,14 +154,14 @@ const WeatherDashboard: React.FC = () => {
             <DataChart
               title="Temperature History"
               data={historicalData}
-              dataKey="field1"
+              dataKey="field2"
               color="#e05c41"
               yAxisLabel="Temperature (°C)"
             />
             <DataChart
               title="Humidity History"
               data={historicalData}
-              dataKey="field2"
+              dataKey="field1"
               color="#3b82f6"
               yAxisLabel="Humidity (%)"
             />
@@ -178,7 +178,7 @@ const WeatherDashboard: React.FC = () => {
             <DataChart
               title="Pressure History"
               data={historicalData}
-              dataKey="field3"
+              dataKey="field5"
               color="#9333ea"
               yAxisLabel="Pressure (hPa)"
             />
@@ -188,7 +188,7 @@ const WeatherDashboard: React.FC = () => {
             <DataChart
               title="Light Intensity History"
               data={historicalData}
-              dataKey="field5"
+              dataKey="field3"
               color="#eab308"
               yAxisLabel="Light (lux)"
             />
